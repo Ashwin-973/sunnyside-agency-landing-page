@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*CONFIG*/
+/*Breakpoint Strategy*/
+
+/* Mobile: 320px - 768px (default) */
+/* Tablet: 768px - 1024px */
+/* Desktop: 1024px+ */
+/* Large Desktop: 1440px+ */
+
+/*Font Size*/
+
+/*body: 16px*/
+/*primary:18px*/
+/*header-large: 48px*/
+/*header-medium: 32px*/
+/*header-small: 24px*/
+
+/*Mobile First Approach*/
+:root{
+/*Colors*/
+--primary-red:hsl(7, 99%, 70%);
+--primary-yellow:hsl(51, 100%, 49%);
+--graphic-text-green:hsl(167, 40%, 24%);
+--photography-blue: hsl(198, 62%, 26%);
+--footer-green:hsl(167, 34%, 41%);
+
+--grey-950: hsl(212, 27%, 19%);
+--grey-600: hsl(213, 9%, 39%);
+--grey-550: hsl(232, 10%, 55%);
+--grey-400: hsl(210, 4%, 67%);
+--white: hsl(0, 100%, 100%);
+
+
+/* Spacing system */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+
+ /* Typography */
+--font-primary:'Barlow','sans-serif';
+--font-header:'Fraunces','sans-serif';
+
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:var(--font-primary);
+    line-height:1.6;
+}
+
