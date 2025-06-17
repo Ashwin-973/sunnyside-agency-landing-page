@@ -20,6 +20,7 @@ npm-debug.log*
 
 # Testing
 /coverage
+requiredText.txt
 
 # Production
 /build
