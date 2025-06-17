@@ -26,10 +26,10 @@
 --photography-blue: hsl(198, 62%, 26%);
 --footer-green:hsl(167, 34%, 41%);
 
---grey-950: hsl(212, 27%, 19%);
---grey-600: hsl(213, 9%, 39%);
---grey-550: hsl(232, 10%, 55%);
---grey-400: hsl(210, 4%, 67%);
+--gray-950: hsl(212, 27%, 19%);
+--gray-600: hsl(213, 9%, 39%);
+--gray-550: hsl(232, 10%, 55%);
+--gray-400: hsl(210, 4%, 67%);
 --white: hsl(0, 100%, 100%);
 
 
@@ -44,6 +44,15 @@
  /* Typography */
 --font-primary:'Barlow','sans-serif';
 --font-header:'Fraunces','sans-serif';
+--font-size-body: 16px;
+--font-size-primary: 18px;
+--font-size-header-lg: 48px;
+--font-size-header-md: 28px;
+--font-size-header-sm: 20px;
+--font-weight-header-lg:900;
+--font-weight-header-md:700;
+--font-weight-header-sm:600;
+
 
 }
 
@@ -56,7 +65,57 @@
 body{
     font-family:var(--font-primary);
     line-height:1.6;
+    width:100%;
+    min-height:100vh;
+    background-color: skyblue;
+    /* position: relative; */
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
+/*HEADER*/
+
+.header{
+    color:var(--white);
+    position:fixed;   
+    top:0px;
+    width:100%;
+
+}
+.navbar{
+    padding:0  var(--space-md) ;
+    display:flex;
+    align-items:center;
+
+}
+.brand{
+    color:var(--gray-950);
+    font-family:var(--font-header);
+    font-size:var(--font-size-header-md);
+    font-weight:var(--font-weight-header-md);
+    /* letter-spacing: */
+}
+.nav-menu{
+    margin-left:auto;
+    padding: var(--space-xs) 0;  /*padding decides the height of entire header*/
+    min-width:35vw;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+.contact-btn{
+    padding-inline:var(--space-sm);
+    color:var(--gray-950);              /*to override user agent color declaration (user agent applies to all form elements)*/
+    font-weight:var(--font-weight-header-sm);
+    padding-block:calc(var(--space-sm)/2);
+    border-width:1px;
+    border-color:transparent;
+    border-style:solid;
+    border-radius:var(--space-sm);
+    background-color:hsla(0 0% 100%)
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
 
+/*HERO-SECTION*/
