@@ -67,8 +67,6 @@ body{
     line-height:1.6;
     width:100%;
     min-height:100vh;
-    background-color: skyblue;
-    /* position: relative; */
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
@@ -77,6 +75,7 @@ body{
 .header{
     color:var(--white);
     position:fixed;   
+    z-index:1;
     top:0px;
     width:100%;
 
@@ -88,7 +87,6 @@ body{
 
 }
 .brand{
-    color:var(--gray-950);
     font-family:var(--font-header);
     font-size:var(--font-size-header-md);
     font-weight:var(--font-weight-header-md);
@@ -119,3 +117,52 @@ body{
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
 
 /*HERO-SECTION*/
+.hero-section{
+    height:120vh;
+    width:100%;
+    position:relative;
+    /* margin-block-start:-108px; */
+    background-color:black;
+    background-image:url("./images/desktop/image-header.jpg");
+    background-size:cover;
+    aspect-ratio:9/5;
+    /* background-position:0px -64px;     To get the orange up!!!*/   
+    background-position:center;
+
+}
+.hero-content-box{
+    color:var(--white);
+    padding-block-start: calc(var(--space-2xl)*3.5);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    gap:calc(var(--space-lg)*2);
+
+
+}
+.hero-content-box span:nth-child(1){
+    font-family: var(--font-header);
+    font-size:var(--font-size-header-lg);
+    font-weight:var(--font-weight-header-lg);
+    letter-spacing:0.2em;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*PROBLEM-SOLUTION SECTION*/
+
+.problem-solution-section1,.problem-solution-section2{
+    display:grid;
+    grid-template-columns:1fr;
+}
+.content-box{
+    text-align:center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+.image-box{
+    background-image:url("")
+}
