@@ -61,6 +61,9 @@
     padding:0;
     box-sizing:border-box;
 }
+/*TODO:  SHOW VARIATION IN FONT AT DIFF VIEWPORTS*/
+/*TODO:  FONTS MUST LOOK AS CLOSE TO THE DESIGN AS POSSIBLE*/
+
 
 body{
     font-family:var(--font-primary);
@@ -71,6 +74,9 @@ body{
 
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
 /*HEADER*/
+
+/*TODO:  FIX NAVBAR NOT HAVING A BACKGROUND*/
+
 
 .header{
     color:var(--white);
@@ -155,6 +161,10 @@ body{
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
 
 /*PROBLEM-SOLUTION SECTION*/
+/*TODO: ENHANCEMENTS*/
+/*TODO: FIX CONTENT BOX OCCUPYING LESSER WIDTH , MAYBE INCREASE PADDING FOR TABLETS */
+/*TODO: FIX UGLY IMAGE SCALING FROM AROUND 450PX TO 1000PX */
+
 
 .problem-solution-section1,.problem-solution-section2{
     display:grid;
@@ -170,7 +180,6 @@ body{
 .problem-solution-section2 .image-box{
     background-image:url("./images/mobile/image-stand-out.jpg");
 }
-/*TODO: FIX CONTENT BOX OCCUPYING LESSER WIDTH */
 .content-box{
     height:100%;
     padding: clamp(1.5rem, 4vw, 2.5rem);
@@ -200,7 +209,6 @@ body{
     font-weight:var(--font-weight-header-sm);
     font-size:var(--font-size-primary);
 }
-/*TODO: FIX UGLY IMAGE SCALING FROM AROUND 450PX TO 1000PX */
 .image-box{
     /* min-height:350px; */
     height:100%;
@@ -241,3 +249,92 @@ body{
     }
 
 }
+
+/* Smooth transitions for better UX */
+/* .content-box, .image-box {
+    transition: all 0.3s ease;
+} */
+
+/* Better text scaling */
+/* .content-box p:first-child {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    line-height: 1.2;
+} */
+
+/* .content-box p:nth-child(2) {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    line-height: 1.6;
+}*/ 
+
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*BENEFITS SECTION*/
+
+/*TODO:  FIX TEXT GETTING PLACED AT THE VERY BOTTOM*/
+/*TODO:  FIX TEXT GETTING PLACED ON TOP OF THE IMAGES*/
+
+
+.benefits-section{
+    display:grid;
+    grid-template-columns: 1fr;
+    min-height:50vh;
+}
+.benefit-card{
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    background-size: cover;
+    background-position: center;
+    aspect-ratio: 5/8;
+    display:flex;
+    align-items:end;
+    justify-content: center;
+}
+.benefits-section .benefit-card:first-child{
+    color:var(--graphic-text-green);
+    background-image:url("./images/mobile/image-graphic-design.jpg");
+
+}
+.benefits-section .benefit-card:last-child{
+    color:var(--photography-blue);
+    background-image:url("./images/mobile/image-photography.jpg");
+}
+.benefit-content{
+    padding: clamp(1rem, 2vw, 1.5rem);
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+    gap: clamp(0.8rem, 2vw, 1.5rem); /*is an explicit gap the only way to space things out?*/
+}
+.benefit-content p:first-child{
+    font-family:var(--font-header);
+    font-size:var(--font-size-header-sm);
+    font-weight:var(--font-weight-header-lg);
+}
+.benefit-content p:last-child{
+    font-size:var(--font-size-body);
+}
+
+@media screen and (min-width:768px){
+    .benefits-section{
+        grid-template-columns: 1fr 1fr;
+
+    }
+    .benefit-card{
+        aspect-ratio: 6/5;
+    }
+
+    .benefits-section .benefit-card:first-child{
+    background-image:url("./images/desktop/image-graphic-design.jpg");
+
+
+}
+.benefits-section .benefit-card:last-child{
+    background-image:url("./images/desktop/image-photography.jpg");
+}
+
+    
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
+
