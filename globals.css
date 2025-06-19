@@ -157,10 +157,8 @@ body{
 /*PROBLEM-SOLUTION SECTION*/
 
 .problem-solution-section1,.problem-solution-section2{
-    display:grid;
-    grid-template-columns:1fr;
-    grid-template-rows: 50vh 50vh;
-    min-height: 100vh;
+    display:flex;
+    flex-direction: column;
 }
 
 .problem-solution-section1 .image-box{
@@ -172,7 +170,8 @@ body{
 }
 /*TODO: FIX CONTENT BOX OCCUPYING LESSER WIDTH */
 .content-box{
-    height:100%;
+    min-height: 50vh;
+    flex:1;
     padding: clamp(1.5rem, 4vw, 2.5rem);
     /* padding:var(--space-2xl); */
     text-align:center;
@@ -203,8 +202,8 @@ body{
 /*TODO: FIX UGLY IMAGE SCALING FROM AROUND 450PX TO 1000PX */
 .image-box{
     /* min-height:350px; */
-    height:100%;
-    width: 100%; 
+    min-height: 50vh;
+    flex:1;
     background-size: cover;
     background-position: center;
     aspect-ratio:125/104;
@@ -214,8 +213,8 @@ body{
 }
 @media screen and (min-width:1024px){
     .problem-solution-section1,.problem-solution-section2{
+        display:grid;
         grid-template-columns:1fr 1fr;
-        grid-template-rows: 1fr;
     }
 
     .content-box{
