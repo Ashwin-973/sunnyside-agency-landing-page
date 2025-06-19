@@ -80,17 +80,18 @@ body{
     width:100%;
 
 }
+.brand{
+    font-family:var(--font-header);
+    font-size:var(--font-size-header-md);
+    font-weight:var(--font-weight-header-md);
+    cursor:pointer;
+    /* background-color:skyblue; */
+}
 .navbar{
     padding:0  var(--space-md) ;
     display:flex;
     align-items:center;
 
-}
-.brand{
-    font-family:var(--font-header);
-    font-size:var(--font-size-header-md);
-    font-weight:var(--font-weight-header-md);
-    /* letter-spacing: */
 }
 .nav-menu{
     margin-left:auto;
@@ -101,7 +102,9 @@ body{
     align-items:center;
 
 }
-
+.nav-menu >*{
+    cursor:pointer;
+}
 .contact-btn{
     padding-inline:var(--space-sm);
     color:var(--gray-950);              /*to override user agent color declaration (user agent applies to all form elements)*/
@@ -137,6 +140,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items:center;
+    text-align:center;
     gap:calc(var(--space-lg)*2);
 
 
@@ -155,14 +159,85 @@ body{
 .problem-solution-section1,.problem-solution-section2{
     display:grid;
     grid-template-columns:1fr;
+    grid-template-rows: 50vh 50vh;
+    min-height: 100vh;
 }
+
+.problem-solution-section1 .image-box{
+    background-image:url("./images/mobile/image-transform.jpg");
+}
+
+.problem-solution-section2 .image-box{
+    background-image:url("./images/mobile/image-stand-out.jpg");
+}
+/*TODO: FIX CONTENT BOX OCCUPYING LESSER WIDTH */
 .content-box{
+    height:100%;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    /* padding:var(--space-2xl); */
     text-align:center;
     display:flex;
     flex-direction: column;
     justify-content: center;
+    /* gap:32px; */
+    gap: clamp(1rem, 3vw, 2rem);
     align-items:center;
 }
+.content-box p:first-child{
+    color:var(--gray-950);
+    font-family: var(--font-header);
+    font-weight:var(--font-weight-header-md);
+    font-size:var(--font-size-header-md);
+}
+.content-box p:nth-child(2){
+    color:var(--gray-550);
+    font-family: var(--font-primary);
+    font-size:var(--font-size-body);
+}
+.content-box p:last-child{
+    color:var(--gray-950);
+    font-family: var(--font-header);
+    font-weight:var(--font-weight-header-sm);
+    font-size:var(--font-size-primary);
+}
+/*TODO: FIX UGLY IMAGE SCALING FROM AROUND 450PX TO 1000PX */
 .image-box{
-    background-image:url("")
+    /* min-height:350px; */
+    height:100%;
+    width: 100%; 
+    background-size: cover;
+    background-position: center;
+    aspect-ratio:125/104;
+}
+@media screen and (min-width: 320px) and (max-width: 1023px) {
+  /* Your CSS rules here */
+}
+@media screen and (min-width:1024px){
+    .problem-solution-section1,.problem-solution-section2{
+        grid-template-columns:1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .content-box{
+    padding: clamp(2rem, 5vw, 4rem);
+    text-align:left;
+    align-items:start;
+    }
+
+    .problem-solution-section1 .image-box{
+        background-image:url("./images/desktop/image-transform.jpg");
+
+    }
+    .problem-solution-section2 .image-box{
+        background-image:url("./images/desktop/image-stand-out.jpg");
+        order:-1;
+
+    }
+
+    .image-box{
+        /* min-height:30vh; */
+        aspect-ratio:6/5;
+
+    }
+
 }
