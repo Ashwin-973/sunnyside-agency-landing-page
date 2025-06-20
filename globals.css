@@ -116,13 +116,19 @@ body{
 .contact-btn{
     padding-inline:var(--space-sm);
     color:var(--gray-950);              /*to override user agent color declaration (user agent applies to all form elements)*/
+    font-family:var(--font-header);
     font-weight:var(--font-weight-header-sm);
     padding-block:calc(var(--space-sm)/2);
     border-width:1px;
     border-color:transparent;
     border-style:solid;
     border-radius:var(--space-sm);
-    background-color:hsla(0 0% 100%)
+    background-color:var(--white);
+    transition: all 0.3s ease;
+}
+.contact-btn:hover{
+    color:var(--white);
+    background-color:hsla(0 0% 100% /25%);
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
@@ -206,11 +212,43 @@ body{
     font-size:var(--font-size-body);
 }
 .content-box p:last-child{
+
+}
+ .underline-text {
+    position: relative;
+    display: inline-block;
     color:var(--gray-950);
     font-family: var(--font-header);
     font-weight:var(--font-weight-header-sm);
     font-size:var(--font-size-primary);
+    text-transform: uppercase;
+    /* letter-spacing: 1px; */
+    cursor: pointer;
+    /* transition: all 0.3s ease; */
 }
+        
+.underline-text::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: -6px;
+    width: 110%;
+    height: 8px;
+    border-radius: 4px;
+    transition: all 0.3s ease-out;
+    opacity:30%;
+}
+        
+.underline-text:hover::after {
+    opacity:75%;
+}
+.problem-solution-section1 .underline-text::after{
+    background-color:var(--primary-yellow);
+}
+.problem-solution-section2 .underline-text::after{
+    background-color:var(--primary-red);
+}
+
 .image-box{
     /* min-height:350px; */
     height:100%;
@@ -514,6 +552,10 @@ body{
 }
 .footer-menu > *{
     cursor:pointer;
+    transition: all 0.3s ease;
+}
+.footer-menu > *:hover{
+    color:var(--white);
 }
 .footer-links{
     display:flex;
@@ -523,6 +565,13 @@ body{
 }
 .footer-links > *{
     cursor:pointer;
+    transition: all 0.3s ease;
+}
+.footer-links > * path{
+    transition: all 0.3s ease;
+}
+.footer-links > *:hover path{
+    fill: var(--white);
 }
 @media screen and (min-width:768px){
     .footer-container{
