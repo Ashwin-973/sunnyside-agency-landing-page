@@ -53,7 +53,14 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+    /* max-width: 100%;  Global constraint  */
 }
+/* Exception for elements that need to exceed parent width intentionally
+.hero-section,
+.header,
+.footer {
+    max-width: none;
+} */
 /*TODO:  SHOW VARIATION IN FONT AT DIFF VIEWPORTS*/
 /*TODO:  FONTS MUST LOOK AS CLOSE TO THE DESIGN AS POSSIBLE*/
 /*TODO:  ADD HOVER STATE IN PC'S AND DECORATION IN BIG SCREENS*/
@@ -64,6 +71,7 @@ body{
     line-height:1.6;
     width:100%;
     min-height:100vh;
+    overflow-x: hidden;  /*strict constraint for mobile devices*/
 }
 
 a{
@@ -77,7 +85,7 @@ a{
 
 
 .header{
-    /* width:100%; */
+    width:100%;
     background-color:#3dbffe;
     color:var(--white);
     position:fixed;   
@@ -253,11 +261,21 @@ a{
 
 
 }
-.hero-content-box span:nth-child(1){
+.hero-content-box p:nth-child(1){
+    max-width:100%;
     font-family: var(--font-header);
-    font-size:var(--font-size-header-lg);
+    font-size: clamp(2.5rem, 8vw, var(--font-size-header-lg));
     font-weight:var(--font-weight-header-lg);
     letter-spacing:0.2em;
+    margin-inline-end: -0.2em;  /* Compensate for letter-spacing overflow */
+}
+@media screen and (max-width:360px){
+    .hero-content-box p:nth-child(1){
+        line-height: 1.1; /* Tighter line height for better mobile display */
+        letter-spacing: 0.15em;
+        margin-right: -0.15em;
+        font-size: clamp(2.25rem, 7vw, 2.5rem);
+    }
 }
 @media screen and (min-width:768px){
     .hero-section{
@@ -265,7 +283,6 @@ a{
         aspect-ratio:9/5;
 
     }
-    
 }
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
 
