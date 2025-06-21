@@ -668,13 +668,15 @@ a{
     max-width:256px;
 }
 .footer-brand{
+    text-align:center;
+    cursor:pointer;
+    margin-block-end:clamp(1.5rem,6vh,3rem)
+}
+.footer-brand a{
     color:var(--graphic-text-green);
     font-family: var(--font-header);
     font-size:var(--font-size-header-md);
     font-weight:var(--font-weight-header-md);
-    cursor:pointer;
-    text-align:center;
-    margin-block-end:clamp(1.5rem,6vh,3rem)
 }
 .footer-menu{
     margin-block-end:clamp(3rem,12vh,6rem);
