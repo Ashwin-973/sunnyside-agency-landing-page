@@ -273,13 +273,15 @@ a{
 /*TODO: ENHANCEMENTS*/
 /*TODO: FIX CONTENT BOX OCCUPYING LESSER WIDTH , MAYBE INCREASE PADDING FOR TABLETS */
 /*TODO: FIX UGLY IMAGE SCALING FROM AROUND 450PX TO 1000PX */
-
+/*FIXES : 1. REMOVE MIN-HEIGHT OF 100VH , REMOVE GRID TEMPLATE ROW 50VH 50VH , LET CONTENT DETERMINE HEIGHT -> RESOLVES HORIZONTAL
+ OVERFLOW SINCE IMAGE WANTS TO OCCUPY 50VH , FORCES IN WIDTH INCREASE BY MAINTAINIG ASPECT RATIO*/
+/*FIXES : 1. IF IT'S ESSENTIAL FOR IMAGE AND CONTENT BOX TO BE OF SAME HEIGHT , SET A/R AND ADJUST PADDING */
 
 .problem-solution-section1,.problem-solution-section2{
     display:grid;
     grid-template-columns:1fr;
-    grid-template-rows: 50vh 50vh;
-    min-height: 100vh;
+    /* grid-template-rows: 50vh 50vh; */
+    /* min-height: 100vh; */
 }
 
 .problem-solution-section1 .image-box{
