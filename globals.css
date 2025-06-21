@@ -93,18 +93,17 @@ a{
     top:0px;
 
 }
-.brand{
+.brand a{
+    color:var(--white);
     font-family:var(--font-header);
     font-size:var(--font-size-header-md);
     font-weight:var(--font-weight-header-md);
     cursor:pointer;
-    /* background-color:skyblue; */
 }
 .navbar{
     padding:0  var(--space-md) ;
     display:flex;
     align-items:center;
-
 }
 .nav-toggle{
     margin-left:auto;
@@ -200,7 +199,17 @@ a{
 }
     .nav-menu >*{
         cursor:pointer;
+        color:var(--white);  /**override user agent styles for anchor*/
+        font-weight:var(--font-weight-header-sm);
+        font-size:var(--font-size-body);
+        transition: all 0.3s ease;
+    }
+    .nav-menu >*:hover{
+        color:var(--gray-950);
 
+    }
+    .nav-menu >*:active{
+        color:var(--gray-950);
     }
 
     .contact-btn{
@@ -310,26 +319,26 @@ a{
 }
 .content-box{
     height:100%;
+    min-height:400px;  /*hacky fix*/
     padding: clamp(1.5rem, 4vw, 2.5rem);
-    /* padding:var(--space-2xl); */
     text-align:center;
     display:flex;
     flex-direction: column;
     justify-content: center;
-    /* gap:32px; */
     gap: clamp(1rem, 3vw, 2rem);
     align-items:center;
 }
 .content-box p:first-child{
     color:var(--gray-950);
     font-family: var(--font-header);
-    font-weight:var(--font-weight-header-md);
+    font-weight:var(--font-weight-header-lg);
     font-size:var(--font-size-header-md);
 }
 .content-box p:nth-child(2){
     color:var(--gray-550);
     font-family: var(--font-primary);
     font-size:var(--font-size-body);
+    font-weight: var(--font-weight-header-sm);
 }
 .content-box p:last-child{
 
@@ -342,7 +351,6 @@ a{
     font-weight:var(--font-weight-header-sm);
     font-size:var(--font-size-primary);
     text-transform: uppercase;
-    /* letter-spacing: 1px; */
     cursor: pointer;
     /* transition: all 0.3s ease; */
 }
@@ -377,8 +385,11 @@ a{
     background-position: center;
     aspect-ratio:125/104;
 }
-@media screen and (min-width: 320px) and (max-width: 1023px) {
+@media screen and (min-width: 320px) and (max-width: 450px) {
   /* Your CSS rules here */
+  .content-box{
+    /* min-height:350px; */
+  }
 }
 @media screen and (min-width:1024px){
     .problem-solution-section1,.problem-solution-section2{
@@ -390,6 +401,8 @@ a{
     padding: clamp(2rem, 5vw, 4rem);
     text-align:left;
     align-items:start;
+    min-height:0px;
+
     }
 
     .problem-solution-section1 .image-box{
@@ -468,11 +481,12 @@ a{
 }
 .benefit-content p:first-child{
     font-family:var(--font-header);
-    font-size:var(--font-size-header-sm);
+    font-size:var(--font-size-header-md);
     font-weight:var(--font-weight-header-lg);
 }
 .benefit-content p:last-child{
     font-size:var(--font-size-body);
+    font-weight:var(--font-weight-header-sm);
 }
 
 @media screen and (min-width:768px){
@@ -519,7 +533,7 @@ a{
     text-align:center;
     margin-bottom: clamp(3rem, 8vw, 5rem);
     text-transform: uppercase;
-    letter-spacing: 0.4rem; 
+    letter-spacing: 0.3rem; 
 }
 .content-grid{
     /* margin-inline:auto; */
@@ -545,8 +559,9 @@ a{
     flex-shrink: 0; /* Prevent image from shrinking */
 }
 .testimonial-card > p{
-    color:var(--gray-600);
+    color:var(--gray-550);
     font-size: clamp(var(--font-size-body), 2.5vw, var(--font-size-primary));
+    font-weight:var(--font-weight-header-sm);
     line-height: 1.7;
     max-width: 30ch; /* Optimal reading width */
 
@@ -566,7 +581,7 @@ a{
 .testimonial-signature p:last-child{
     color:var(--gray-400);
     font-size:var(--font-size-body);
-
+    font-weight:var(--font-weight-header-sm);
 }
 @media (min-width: 768px) {
     .content-grid {
@@ -663,15 +678,15 @@ a{
 }
 .footer-menu{
     margin-block-end:clamp(3rem,12vh,6rem);
-    color:var(--graphic-text-green);
-    font-size:var(--font-size-body);
-    font-weight:var(--font-weight-header-sm);
     display:flex;
     justify-content: space-between;
     align-items: center;
 }
 .footer-menu > *{
     cursor:pointer;
+    color:var(--graphic-text-green);
+    font-size:var(--font-size-body);
+    font-weight:var(--font-weight-header-sm);
     transition: all 0.3s ease;
 }
 .footer-menu > *:hover{
