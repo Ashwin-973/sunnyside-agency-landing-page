@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="globals.css">
+  <script src="script.js" defer></script>
   <title>Sunnyside Agency</title>
-
 </head>
 <body>
   <header class="header">
@@ -15,16 +15,24 @@
         <span class="">sunnyside</span>
       </div>
       <div class="nav-menu">
-        <span class="">About</span>
-        <span class="">Services</span>
-        <span class="">Projects</span>
-        <div>
+        <a >About</a>
+        <a >Services</a>
+        <a >Projects</a>
           <button class="contact-btn" type="button">CONTACT</button>
-        </div>
       </div>
-      <div class="nav-toggle" style="display:none"><button></button></div>
+      <button class="nav-toggle" type="button">
+        <img src="./images/icon-hamburger.svg" alt="icon-hamburger"/>
+      </button>
     </nav>
-    <div class="hamburger-menu"></div>
+    <div class="hamburger-menu">
+      <div class="hamburger-menu-content">
+            <a href="#" class="hamburger-menu-item">About</a>
+            <a href="#" class="hamburger-menu-item">Services</a>
+            <a href="#" class="hamburger-menu-item">Projects</a>
+            <button class="mobile-contact-btn" type="button">CONTACT</button>
+      </div>
+      <div class="mobile-menu-arrow"></div>
+    </div>
   </header>
   <main>
     <section class="hero-section">
@@ -112,10 +120,6 @@
         <span>Projects</span>
       </div>
       <div class="footer-links">
-        <!-- <img src="./images/icon-facebook.svg" alt="facebook-logo">
-        <img src="./images/icon-instagram.svg" alt="instagram-logo">
-        <img src="./images/icon-twitter.svg" alt="twitter-logo">
-        <img src="./images/icon-pinterest.svg" alt="pinterest-logo"> -->
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
           <path d="M18.896 0H1.104C.494 0 0 .494 0 1.104v17.793C0 19.506.494 20 1.104 20h9.58v-7.745H8.076V9.237h2.606V7.01c0-2.583 1.578-3.99 3.883-3.99 1.104 0 2.052.082 2.329.119v2.7h-1.598c-1.254 0-1.496.597-1.496 1.47v1.928h2.989l-.39 3.018h-2.6V20h5.098c.608 0 1.102-.494 1.102-1.104V1.104C20 .494 19.506 0 18.896 0z" fill="#2C7566" fill-rule="nonzero"/>
         </svg>

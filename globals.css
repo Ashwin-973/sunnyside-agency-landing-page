@@ -73,10 +73,14 @@ body{
     min-height:100vh;
 }
 
+a{
+    text-decoration: none;
+}
+
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
 /*HEADER*/
 
-/*TODO:  FIX NAVBAR NOT HAVING A BACKGROUND*/
+/*TODO:  CENTER HAMBURGER MENU*/
 
 
 .header{
@@ -96,41 +100,138 @@ body{
     /* background-color:skyblue; */
 }
 .navbar{
-    padding:0  var(--space-lg) ;
+    padding:0  var(--space-md) ;
     display:flex;
     align-items:center;
 
 }
+.nav-toggle{
+    margin-left:auto;
+    cursor:pointer;
+    border:none;
+    background:transparent;
+    display: block;
+}
+.nav-toggle:focus-visible{
+    outline:none;   /**gets rid of ugly user agent outline*/
+}
+.hamburger-menu{
+    position: absolute; /**wrt to header*/
+    top: 180%;
+    /* right:25%; */
+    right:var(--space-md);  
+    width: calc(100% - 3rem);
+    max-width: 320px;
+    background-color: var(--white);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10;
+}
+.hamburger-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.hamburger-menu-content {
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+}
+.hamburger-menu-item {
+    color: var(--gray-550);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-header-sm);
+    transition: color 0.25s ease;
+}
+.mobile-contact-btn {
+    display:block;
+    padding-inline:var(--space-sm);
+    padding-block:calc(var(--space-sm)/2);  
+    background-color: var(--primary-yellow);
+    color: var(--gray-950);
+    font-family: var(--font-header);
+    font-weight: var(--font-weight-header-md);
+    font-size: var(--font-size-body);
+    text-transform: uppercase;
+    border-width:1px;
+    border-color:transparent;
+    border-style:solid;
+    border-radius:var(--space-md);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Triangle Arrow */
+.mobile-menu-arrow {
+    position: absolute;
+    top: -30px;
+    right: 0px;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 30px solid var(--white);
+}
+
 .nav-menu{
+    display:none;
+}
+.contact-btn{
+    display:none;
+}
+
+
+
+@media screen and (min-width:768px){
+    .nav-menu{
     margin-left:auto;
     padding: var(--space-xs) 0;  /*padding decides the height of entire header*/
     min-width:35vw;
     display:flex;
-    justify-content:space-between;
+    justify-content:center;
     align-items:center;
+    gap:clamp(2rem,3.5vw,3rem);
+}
+    .nav-menu >*{
+        cursor:pointer;
 
-}
-.nav-menu >*{
-    cursor:pointer;
-}
-.contact-btn{
+    }
+
+    .contact-btn{
+    display:block;
     padding-inline:var(--space-sm);
     color:var(--gray-950);              /*to override user agent color declaration (user agent applies to all form elements)*/
     font-family:var(--font-header);
-    font-weight:var(--font-weight-header-sm);
+    font-weight:var(--font-weight-header-md);
+    font-size: var(--font-size-body);
     padding-block:calc(var(--space-sm)/2);
     border-width:1px;
     border-color:transparent;
     border-style:solid;
-    border-radius:var(--space-sm);
+    border-radius:var(--space-md);
     background-color:var(--white);
+    cursor: pointer;
     transition: all 0.3s ease;
 }
-.contact-btn:hover{
-    color:var(--white);
-    background-color:hsla(0 0% 100% /25%);
-}
+    .contact-btn:hover{
+        color:var(--white);
+        background-color:hsla(0 0% 100% /25%);
+    }
 
+    .nav-toggle{
+        display:none;
+    }
+    .hamburger-menu{
+        display:none;
+    }
+
+
+}
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
 
 /*HERO-SECTION*/
